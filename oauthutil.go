@@ -8,7 +8,7 @@ import (
 	"golang.org/x/oauth2"
 )
 
-func tokenFromFile(file string) (*oauth2.Token, error) {
+func TokenFromFile(file string) (*oauth2.Token, error) {
 	f, err := os.Open(file)
 	if err != nil {
 		return nil, err
@@ -18,7 +18,7 @@ func tokenFromFile(file string) (*oauth2.Token, error) {
 	return t, err
 }
 
-func saveToken(file string, token *oauth2.Token) {
+func SaveToken(file string, token *oauth2.Token) {
 	f, err := os.Create(file)
 	if err != nil {
 		log.Printf("Warning: failed to cache oauth token: %v", err)
